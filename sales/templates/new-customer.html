@@ -1,0 +1,138 @@
+{%extends 'dashboard-home.html'%}
+{%load static%}
+{%block content%}
+<h2>New Customer </h2>
+<div class="card">
+    <div class="container-fluid">
+        
+        <form action="" method="post" class="">
+            {%csrf_token%}
+            
+            <div class="input-group mb-3 mt-4">
+                <span class="input-group-text" id="">Company name<span
+                                       class="text-danger">*</span></span>
+               <input type="text" name="company_name" class="form-control" id="" aria-describedby="basic-addon3">
+           </div>
+           <div class="row">
+            <label for="" class="mt-3 mb-1">Customer display name:</label>
+            <div class="col-6">
+                
+                <div class="input-group mb-3">
+                    
+                    <span class="input-group-text" id="">
+                        <span style="font-size: 14px;">In primary language</span><span
+                                           class="text-danger">*</span></span>
+                   <input type="text" name="customer_displayname" class="form-control" id="" aria-describedby="basic-addon3">
+               </div>
+            
+               <div class="input-group mb-3">
+                <span class="input-group-text" id="">Email<span
+                                       class="text-danger">*</span></span>
+               <input type="email" name="cusotmer_email" class="form-control" id="" aria-describedby="basic-addon3">
+            </div>
+            
+
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="">Buyer Id<span
+                                       class="text-danger">*</span></span>
+               <input type="text" name="buyer_id" class="form-control" id="" aria-describedby="basic-addon3">
+            </div>
+
+            
+
+
+            </div>
+            <div class="col-6">
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="" style="font-size: 14px;">In secondary language (Arabic)<span
+                                           class="text-danger">*</span></span>
+                   <input type="text" name="display_name_arabic" class="form-control" id="" aria-describedby="basic-addon3">
+                </div>
+
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="">Phone<span
+                                           class="text-danger">*</span></span>
+                   <input type="text" name="customer_phone" class="form-control" id="" aria-describedby="basic-addon3">
+                </div>
+            </div>
+           </div>
+<hr>
+           <div class="row">
+            <div class="text-cente mb-3"><h4 class="text-secondary">Address</h4></div>
+            <div class="col-6">
+                <label style="font-size: 14px;" class="mb-2" for="">In Primary Language</label>
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="">Country/Region<span
+                                           class="text-danger">*</span></span>
+                   <input type="text" name="country_or_region" class="form-control" id="" aria-describedby="basic-addon3">
+                </div>
+
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="">Building Number<span
+                                           class="text-danger">*</span></span>
+                   <input type="text" name="building_number" class="form-control" id="" aria-describedby="basic-addon3">
+                </div>
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="">Street<span
+                                           class="text-danger">*</span></span>
+                   <input type="text" name="street" class="form-control" id="" aria-describedby="basic-addon3">
+                </div>
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="">City<span
+                                           class="text-danger">*</span></span>
+                   <input type="text" name="city" class="form-control" id="" aria-describedby="basic-addon3">
+                </div>
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="">Zip code<span
+                                           class="text-danger">*</span></span>
+                   <input type="text" name="zipcode" class="form-control" id="" aria-describedby="basic-addon3">
+                </div>
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="">Phone no.<span
+                                           class="text-danger">*</span></span>
+                   <input type="text" name="phone_no" class="form-control" id="" aria-describedby="basic-addon3">
+                </div>
+            </div>
+            <div class="col-6">
+                <label style="font-size: 14px;" for="" class="mb-2">In Secondary Language (Arabic)</label>
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="">Country/Region<span
+                                           class="text-danger">*</span></span>
+                   <input type="text" name="country_arabic" class="form-control" id="" aria-describedby="basic-addon3">
+                </div>
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="">Building Number<span
+                                           class="text-danger">*</span></span>
+                   <input type="text" name="arabic_bdnumber" class="form-control" id="" aria-describedby="basic-addon3">
+                </div>
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="">Street<span
+                                           class="text-danger">*</span></span>
+                   <input type="text" name="street" class="form-control" id="" aria-describedby="basic-addon3">
+                </div>
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="">City<span
+                                           class="text-danger">*</span></span>
+                   <input type="text" name="city_arabic" class="form-control" id="" aria-describedby="basic-addon3">
+                </div>
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="">Zip code<span
+                                           class="text-danger">*</span></span>
+                   <input type="text" name="zipcode_arabic" class="form-control" id="" aria-describedby="basic-addon3">
+                </div>
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="">Phone no.<span
+                                           class="text-danger">*</span></span>
+                   <input type="text" name="phone_no" class="form-control" id="" aria-describedby="basic-addon3">
+                </div>
+            </div>
+           </div>
+
+           
+<input type="submit" class="btn btn-primary mb-2" value="Save">
+        </form>
+
+    </div>
+    </div>
+
+{%endblock%}
