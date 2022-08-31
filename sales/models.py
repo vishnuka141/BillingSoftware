@@ -1,4 +1,5 @@
 
+from turtle import ondrag
 from django.db import models
 from accounts.models import CustomUser
 import datetime
@@ -16,7 +17,7 @@ class Customer(models.Model):
     created_user=models.ForeignKey(CustomUser,on_delete=models.CASCADE,related_name='created_user')
     company_name=models.CharField(max_length=250)
     customer_displayname=models.CharField(max_length=120)
-    display_name_arabic=models.CharField(max_length=200,null=True)
+    display_name_arabic=models.CharField(max_length=200,null=True,blank=True)
     cusotmer_email=models.EmailField()
     customer_phone=models.CharField(max_length=120)
     buyer_id_options=models.CharField(choices=buyer_options,default='NAT',max_length=120)
@@ -29,32 +30,21 @@ class Customer(models.Model):
 class Customer_Address(models.Model):
     customer=models.ForeignKey(Customer,on_delete=models.CASCADE,default=True,related_name='customer')
     country_or_region=models.CharField(max_length=120)
-    country_arabic=models.CharField(max_length=120,null=True)
+    country_arabic=models.CharField(max_length=120,blank=True)
     building_number=models.CharField(max_length=120)
-    arabic_bdnumber=models.CharField(max_length=120,null=True)
+    arabic_bdnumber=models.CharField(max_length=120,blank=True)
     street=models.CharField(max_length=120)
-    arabic_street=models.CharField(max_length=120,null=True)
+    arabic_street=models.CharField(max_length=120,blank=True)
     city=models.CharField(max_length=120)
-    city_arabic=models.CharField(max_length=250,null=True)
+    city_arabic=models.CharField(max_length=250,blank=True)
     zipcode=models.CharField(max_length=120)
-    zipcode_arabic=models.CharField(max_length=120,null=True)
+    zipcode_arabic=models.CharField(max_length=120,blank=True)
     phone_no=models.CharField(max_length=120)
 
 
     def __str__(self):
         return self.city
 
-class Quote_Items(models.Model):
-    item_id=models.AutoField(primary_key=True)
-    item_details=models.CharField(max_length=120)
-    quantity=models.PositiveIntegerField()
-    rate=models.FloatField()
-    discount=models.FloatField()
-    tax=models.FloatField()
-    amount=models.FloatField()
-
-    def __str__(self):
-        return self.item_id
 
 class Quotation(models.Model):
     quote_createdby=models.ForeignKey(Customer,on_delete=models.CASCADE,related_name='quote_createdby')
@@ -62,7 +52,7 @@ class Quotation(models.Model):
     quote_id=models.AutoField(primary_key=True)
     quote_date=models.DateField(auto_now_add=True)
     quote_expdate=models.DateField()
-    quote_items=models.ForeignKey(Quote_Items,on_delete=models.CASCADE,related_name="quote_items")
+    
     quote_options = (
         ("pending", "pending"),
         ("approved", "approved"),
@@ -75,5 +65,16 @@ class Quotation(models.Model):
     terms_and_conditions=models.TextField()
 
 
+class Quote_Items(models.Model):
+    item_id=models.AutoField(primary_key=True)
+    item_details=models.CharField(max_length=120)
+    quantity=models.PositiveIntegerField()
+    rate=models.FloatField()
+    discount=models.FloatField()
+    tax=models.FloatField()
+    amount=models.FloatField()
+    quotation=models.ForeignKey(Quotation,on_delete=models.CASCADE,default=True,related_name="quotation")
+    def __str__(self):
+        return self.item_id
 
     

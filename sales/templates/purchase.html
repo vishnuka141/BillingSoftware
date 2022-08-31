@@ -1,0 +1,73 @@
+{%extends 'dashboard-home.html'%}
+{%load static%}
+{%block content%}
+<div class="d-flex justify-content-between mt-3 mb-3">
+    <div><h3 class="container mt-3">Purchase orders</h3></div>
+    <div>
+    <a class="btn btn-primary" href="" >
+                <i class="bi bi-plus-circle"></i> New
+              </a>
+    </div>
+  </div>
+<div class="card">
+    <div class="card-header">
+      <h4 class="card-header-title">Orders</h4>
+    </div>
+  
+    <!-- Table -->
+    <div class="table-responsive datatable-custom">
+      <table class="js-datatable table table-borderless table-thead-bordered table-nowrap table-align-middle card-table"
+             data-hs-datatables-options='{
+                     "order": [],
+                     "isResponsive": false,
+                     "isShowPaging": false,
+                     "pagination": "datatableWithPaginationPagination"
+                   }'>
+        <thead class="thead-light">
+        <tr>
+          <th>Purchase order</th>
+          <th>Date</th>
+          <th>Vendor Name</th>
+          <th></th>
+          <th></th>
+          
+        </tr>
+        </thead>
+  
+        <tbody>
+        <tr>
+          <td>
+        <a class="d-flex align-items-center" href="../user-profile.html">
+          <!-- <div class="avatar avatar-circle">
+            <img class="avatar-img" src="" alt="Image Description">
+          </div> -->
+          
+        </a>
+      </td>
+          <td>
+            <span class="d-block h5 mb-0"></span>
+            <span class="d-block fs-5"></span>
+          </td>
+          <td></td>
+          <td>
+            
+          </td>
+        </tr>
+  
+        
+        </tbody>
+      </table>
+    </div>
+    <!-- End Table -->
+  
+    <!-- Footer -->
+    <div class="card-footer">
+      <!-- Pagination -->
+      <div class="d-flex justify-content-center justify-content-sm-end">
+        <nav id="datatableWithPaginationPagination" aria-label="Activity pagination"></nav>
+      </div>
+      <!-- End Pagination -->
+    </div>
+    <!-- End Footer -->
+  </div>
+{%endblock%}

@@ -32,15 +32,6 @@
             </div>
             
 
-            <div class="input-group mb-3">
-                <span class="input-group-text" id="">Buyer Id<span
-                                       class="text-danger">*</span></span>
-               <input type="text" name="buyer_id" class="form-control" id="" aria-describedby="basic-addon3">
-            </div>
-
-            
-
-
             </div>
             <div class="col-6">
                 <div class="input-group mb-3">
@@ -52,9 +43,28 @@
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="">Phone<span
                                            class="text-danger">*</span></span>
-                   <input type="text" name="customer_phone" class="form-control" id="" aria-describedby="basic-addon3">
+                   <input type="text" name="customer_phone" class="form-control" id="" required aria-describedby="basic-addon3">
                 </div>
             </div>
+            <div class="input-group mb-3">
+                
+                <select class="form-control" name="buyer_id_options" id="">
+                 <option name="buyer_id_options" >Select  option</option>
+                 <option name="buyer_id_options" class="form-control" >NAT</option>
+                 <option name="buyer_id_options" class="form-control" >TIN</option>
+                 <option name="buyer_id_options" class="form-control" >IQA</option>
+                 <option name="buyer_id_options" class="form-control" >PAS</option>
+                 <option name="buyer_id_options" class="form-control" >CRN</option>
+                 <option name="buyer_id_options"  class="form-control">MOM</option>
+                 <option name="buyer_id_options" class="form-control" >MLS</option>
+                 <option name="buyer_id_options" class="form-control" >SAG</option>
+                 <option name="buyer_id_options" class="form-control" >GCC</option>
+                 <option name="buyer_id_options" class="form-control" >OTH</option>
+                </select>
+                <span class="input-group-text" id="">Buyer Id<span
+                 class="text-danger">*</span></span>
+                 <input type="text" name="buyer_id" class="form-control" id="" aria-describedby="basic-addon3">
+             </div>
            </div>
 <hr>
            <div class="row">
@@ -108,7 +118,7 @@
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="">Street<span
                                            class="text-danger">*</span></span>
-                   <input type="text" name="street" class="form-control" id="" aria-describedby="basic-addon3">
+                   <input type="text" name="arabic_street" class="form-control" id="" aria-describedby="basic-addon3">
                 </div>
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="">City<span
@@ -120,11 +130,11 @@
                                            class="text-danger">*</span></span>
                    <input type="text" name="zipcode_arabic" class="form-control" id="" aria-describedby="basic-addon3">
                 </div>
-                <div class="input-group mb-3">
+                <!-- <div class="input-group mb-3">
                     <span class="input-group-text" id="">Phone no.<span
                                            class="text-danger">*</span></span>
                    <input type="text" name="phone_no" class="form-control" id="" aria-describedby="basic-addon3">
-                </div>
+                </div> -->
             </div>
            </div>
 

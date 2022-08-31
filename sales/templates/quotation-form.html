@@ -26,15 +26,17 @@ table td input {
     <div class="container-fluid">
         <form action="" method="post" enctype="multipart/form-data" class=" mt-4">
             {%csrf_token%}
+            <!-- {{quoteform.as_p}}
+            {{quoteitem_form.as_p}}
+            <input type="submit"> -->
     <div class="input-group mb-5">
         <span class="input-group-text" id="">Customer Name<span
                                 class="text-danger">*</span></span>
-                                <select name="thing" id="select-beast" class="form-select" placeholder="Select a person..." autocomplete="off">
-                                    <option class="" >Select a Customer</option>
-                                    <option >Thomas Edison</option>
-                                    <option >Nikola</option>
-                                    <option >Nikola Tesla</option>
-                                    <option >New Thing</option>
+                                <select name="customer_name" id="select-beast" class="form-select" placeholder="Select a customer..." autocomplete="off">
+                                    <!-- <option class="" >Select a Customer</option> -->
+                                    {%for customer in customers%}
+                                    <option name="customer_name">{{customer.customer_displayname}}</option>
+                                    {%endfor%}
                                     
                                 </select>
         <div class="d-flex justify-content-between">
@@ -57,7 +59,7 @@ table td input {
    <div class="input-group mb-5 mt-5">
          <span class="input-group-text" id="">Expiry date<span
                                 class="text-danger">*</span></span>
-        <input type="date" name="expiry_date" class="form-control" id="" aria-describedby="basic-addon3">
+        <input type="date" name="quote_expdate" class="form-control" id="" aria-describedby="basic-addon3">
     </div>
 
     
@@ -83,7 +85,7 @@ table td input {
     <tr>
 
       <td>
-        <textarea name="item_details" class="form-control border border-0" aria-label="With textarea" required></textarea>
+        <textarea name="item_details" class="form-control border border-0" aria-label="With textarea" ></textarea>
       </td>
       
       <td>
@@ -161,16 +163,26 @@ table td input {
                                 class="text-danger">*</span></span>
 <textarea name="note" class="form-control" aria-label="With textarea" required></textarea>
     </div> -->
-
+    <!-- <div class="input-group mb-5">
+      <span class="input-group-text" id="">Quote status<span
+                             class="text-danger">*</span></span>
+                             <select class="form-control" name="quote_status" id="">
+                              <option name="quote_status" >Select  option</option>
+                              <option name="quote_status" class="form-control" >pending</option>
+                              <option name="quote_status" class="form-control" >approved</option>
+                              <option name="quote_status" class="form-control" >cancelled</option>
+                              <option name="quote_status" class="form-control" >expired</option>
+                             </select>
+ </div> -->
     <div class="input-group mb-5">
         <span class="input-group-text" id="">Customer notes<span
                                class="text-danger">*</span></span>
-        <textarea name="customer_notes" class="form-control" aria-label="With textarea" required></textarea>
+        <textarea name="customer_notes" class="form-control" aria-label="With textarea" ></textarea>
    </div>
            <div class="input-group mb-5">
         <span class="input-group-text" id="">Terms and conditions <span
                                class="text-danger">*</span></span>
-        <textarea name="terms_and_conditions" class="form-control" aria-label="With textarea" required></textarea>
+        <textarea name="terms_and_conditions" class="form-control" aria-label="With textarea" ></textarea>
    </div>
  <div class="input-group mb-4">
      <input type="submit" class="btn btn-primary">
@@ -191,8 +203,8 @@ table td input {
 <p>
     {{customer.customer_id}}
     {{customer.customer_displayname}}
-    {{customer.cusotmer_email}
-    {{customer.company_name}
+    {{customer.cusotmer_email}}
+    {{customer.company_name}}
 </p>
 {%endfor%}
 
