@@ -1,0 +1,194 @@
+{%extends 'dashboard-home.html'%}
+{%load static%}
+{%block content%}
+<div class="" >
+    <h3 >New Item</h3> 
+</div>
+<div class="card">
+<div class="container-fluid">
+    <form action="" method="post">
+        <div class="row ">
+            <div class="col-lg-8">
+                <div class="row mt-4">
+                    <div class="col-lg-3">
+                        <label for="" class="text-danger">Name*</label>
+                    </div>
+                    <div class="col-lg-9">
+                        <div class="mb-4">
+                            <label class="mb-2" style="font-size: 12px;" for="">In Primary Language</label>
+                        <input type="text"  name=""  class="form-control border rounded-0">
+                        </div>
+                        <div class="mb-4">
+                            <label class="mb-2" style="font-size: 12px;" for="">In Secondary Language (Arabic)</label>
+                        <input type="text" name="" class="form-control rounded-0">
+                        </div>
+    
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4"></div>
+        </div>
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="row">
+                    <div class="col-lg-3">
+                        
+                        <label for="">Unit</label>
+                    </div>
+                    <div class="col-lg-9">
+                        
+                        <div class="mb-4">
+                            <select class="form-control rounded-0"  name="" id="" placeholder="select">
+                                <option value="">box</option>
+                                <option value="">cm</option>
+                                <option value="">dz</option>
+                                <option value="">ft</option>
+                                <option value="">g</option>
+                                <option value="">in</option>
+                                <option value="">kg</option>
+                                <option value="">lb</option>
+                                <option value="">mg</option>
+                            </select>
+                        </div>
+    
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4"></div>
+        </div>
+    <hr>
+    
+        <div class="row">
+            <div class="col-lg-12">
+               <div class="row">
+                <div class="col-lg-6">
+                    <div class="row">
+                        <label for="" class="mt-4 mb-3" ><strong>Sales information</strong></label>
+                        <div class="col-lg-3">
+                            
+                            <div class="mt-4">
+                                <label for="" class="text-danger">Selling Price*</label>
+                            </div>
+                            
+                        </div>
+                        <div class="col-lg-9">
+                            <div class="input-group mb-4">
+                                <span class="input-group-text rounded-0 bg-light">SAR</span>
+                                <div class="form-floating">
+                                  <input type="text" class="form-control rounded-0" id="floatingInputGroup1" placeholder="">
+                                  <label for="floatingInputGroup1"></label>
+                                </div>
+                              </div>
+                              
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-3">
+                            <div class="mt-4">
+                                <label for="" class="text-danger">Account*</label>
+                            </div>
+                        </div>
+                        <div class="col-lg-8">
+                            <div class="input-group mt-4">
+                                <select name="" class="form-control rounded-0" id="">
+                                    <option value="">Discount</option>
+                                    <option value="">General income</option>
+                                </select>
+                                
+                              </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-3">
+                            <div class="mt-4">
+                                <label for="" class="">Description</label>
+                            </div>
+                        </div>
+                        <div class="col-lg-8">
+                            <div class="input-group mt-4">
+                                <textarea class="form-control rounded-0" placeholder="" id="floatingTextarea"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-3">
+                            <div class="mt-4">
+                                <label for="" class="">Tax</label>
+                            </div>
+                        </div>
+                        <div class="col-lg-8">
+                            <div class="input-group mt-4">
+                                <select name="" class="form-control rounded-0" id="">
+                                    <option value="">Standart Rate [15%]</option>
+                                    <option value="">Zero Rate</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+    
+    
+                </div>
+                <div class="col-lg-6">
+    
+                    <div class="row">
+                        <label for="" class="mt-4 mb-3" ><strong>Purchase Information</strong></label>
+                        <div class="col-lg-3">
+                            
+                            <div class="mt-4">
+                                <label for="" class="text-danger">Cost Price*</label>
+                            </div>
+                            
+                        </div>
+                        <div class="col-lg-9">
+                            <div class="input-group mb-4">
+                                <span class="input-group-text rounded-0 bg-light">SAR</span>
+                                <div class="form-floating">
+                                  <input type="text" class="form-control rounded-0" id="floatingInputGroup1" placeholder="">
+                                  <label for="floatingInputGroup1"></label>
+                                </div>
+                              </div>
+                              
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-3">
+                            <div class="mt-4">
+                                <label for="" class="text-danger">Account*</label>
+                            </div>
+                        </div>
+                        <div class="col-lg-8">
+                            <div class="input-group mt-4">
+                                <select name="" class="form-control rounded-0" id="">
+                                    <option value="">Rent Expenses</option>
+                                    <option value="">Repair and maintenance</option>
+                                </select>
+                              </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-3">
+                            <div class="mt-4">
+                                <label for="" class="">Description</label>
+                            </div>
+                        </div>
+                        <div class="col-lg-8">
+                            <div class="input-group mt-4">
+                                <textarea class="form-control rounded-0" placeholder="" id="floatingTextarea"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+               </div>
+            </div>
+        </div>
+        <div class="mt-4 mb-4">
+            <input type="submit" class="btn btn-primary border rounded-1" value="Save">
+            <a href="{%url 'item-list'%}" class="btn btn-light border ms-3">Cancel</a>
+        </div>
+    </form>
+</div>
+    
+</div>
+
+{%endblock%}

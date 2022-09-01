@@ -2,16 +2,17 @@
 {%load static%}
 {%block content%}
 <div class="d-flex justify-content-between mt-3 mb-3">
-    <div><h3 class="container mt-3">Invoices</h3></div>
+    <div><h3 class="container mt-3">All Items</h3></div>
     <div>
-    <a class="btn btn-primary" href="{%url 'new-invoice'%}" >
-                <i class="bi bi-plus-circle"></i> New Invoice
+    <a class="btn btn-primary" href="{%url 'add-item'%}" >
+                <i class="bi bi-plus-circle"></i> New Item
               </a>
     </div>
   </div>
-<div class="card">
+  <hr>
+  <div class="card">
     <div class="card-header">
-      <h4 class="card-header-title">Invoices</h4>
+      <h4 class="card-header-title"></h4>
     </div>
   
     <!-- Table -->
@@ -25,35 +26,22 @@
                    }'>
         <thead class="thead-light">
         <tr>
-          <th>Date</th>
-          <th>Invoice</th>
-          <th>Order Number</th>
-          <th>Customer name</th>
-          <th>Status</th>
-          <th>Due date</th>
-          <th>Amount</th>
-          <th>Balance Due</th>
+          <th>Name</th>
+          <th>Description</th>
+          <th>Rate</th>
+          <th>Usage Unit</th>
+          
+          
+          
         </tr>
         </thead>
   
         <tbody>
         <tr>
-          <td>
-        <a class="d-flex align-items-center" href="../user-profile.html">
-          <!-- <div class="avatar avatar-circle">
-            <img class="avatar-img" src="" alt="Image Description">
-          </div> -->
-          
-        </a>
-      </td>
-          <td>
-            <span class="d-block h5 mb-0"></span>
-            <span class="d-block fs-5"></span>
-          </td>
-          <td></td>
-          <td>
-            
-          </td>
+          <td>vishnu</td>
+          <td>kslls</td>
+          <td>1323</td>
+          <td>lls</td>
         </tr>
   
         

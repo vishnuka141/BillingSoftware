@@ -53,22 +53,22 @@ class CreateQuotationView(TemplateView):
             return render(request,self.template_name,context)
              
     
-# def quotation_create_view(request):
+def quotation_create_view(request):
     
-#     if request.method=="POST":
-#         customers = Customer.objects.filter(created_user=request.user)
-#         quote_form= Quote_form(request.POST)
-#         quoteitem_form=Quoteitem_form(request.POST)
+    if request.method=="POST":
+        customers = Customer.objects.filter(created_user=request.user)
+        quote_form= Quote_form(request.POST)
+        quoteitem_form=Quoteitem_form(request.POST)
         
-#         if quote_form.is_valid() and quoteitem_form.is_valid():
-#             customer_name=quote_form.cleaned_data.get("customer_name")
-#             quote_form.instance.quote_createdby=customer_name
-#             quote_form.save()   
-#         return redirect('q-list')
-#     else:
-#         customers = Customer.objects.filter(created_user=request.user)
-#         context = {"quoteform":Quote_form(),"quoteitem_form":Quoteitem_form(),"customers":customers}
-#         return render(request,'quotation-form.html',context)
+        if quote_form.is_valid() and quoteitem_form.is_valid():
+            customer_name=quote_form.cleaned_data.get("customer_name")
+            quote_form.instance.quote_createdby=customer_name
+            quote_form.save()   
+        return redirect('q-list')
+    else:
+        customers = Customer.objects.filter(created_user=request.user)
+        context = {"quoteform":Quote_form(),"quoteitem_form":Quoteitem_form(),"customers":customers}
+        return render(request,'quotation-form.html',context)
 
 def customer_create_view(request,**kwargs):
     
@@ -92,11 +92,13 @@ def customer_create_view(request,**kwargs):
 
 
 
-
 def customers_list(request):
     return render(request,'customers.html')
 def invoices_list(request):
     return render(request,'invoices.html')
+def create_invoice(request):
+    return render(request,'create_invoice.html')
+
 def vendors_list(request):
     return render(request,'vendors.html')    
 def purchase_orders_list(request):
