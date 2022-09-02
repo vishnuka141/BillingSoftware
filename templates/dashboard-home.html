@@ -25,8 +25,8 @@
 
   <link rel="preload" href="{%static 'assets/css/theme.min.css'%}" data-hs-appearance="default" as="style">
   <link rel="preload" href="{%static 'assets/css/theme-dark.min.css'%}" data-hs-appearance="dark" as="style">
-
-
+<link rel="stylesheet" href="{%static 'assets/css/morecss.css'%}">
+<script src="{%static 'assets/js/morejs.js'%}"></script>
   <style data-hs-appearance-onload-styles>
     *
     {
@@ -802,7 +802,7 @@
           <div id="navbarVerticalMenu" class="nav nav-pills nav-vertical card-navbar-nav">
             <!-- Collapse -->
             <div class="nav-item">
-              <a class="nav-link " href="#navbarVerticalMenuDashboards" role="button" data-bs-toggle="collapse" data-bs-target="#navbarVerticalMenuDashboards" aria-expanded="true" aria-controls="navbarVerticalMenuDashboards">
+              <a class="nav-link " href="{%url 'userhome'%}" >
                 <i class="bi-house-door nav-icon"></i>
                 <span class="nav-link-title">Dashboards</span>
               </a>
@@ -901,14 +901,14 @@
 
   <main id="content" role="main" class="main">
     <!-- Content -->
-    <div class="content container-fluid">
+    <!-- <div class="content container-fluid"> -->
       
       {%block content%}
 
       {%endblock%}
 
       
-    </div>
+    <!-- </div> -->
     <!-- End Content -->
 
     <!-- Footer -->

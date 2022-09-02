@@ -7,6 +7,7 @@
 <div class="card">
 <div class="container-fluid">
     <form action="" method="post">
+        {%csrf_token%}
         <div class="row ">
             <div class="col-lg-2">
                 <label for=""  class="text-danger mt-4">Customer Name*</label>
@@ -89,15 +90,83 @@
             <div class="col-lg-4"></div>
         </div>
     <hr>
+
+    <table class="_table">
+        <thead>
+          <tr>
+            <th scope="col">Item Detatils</th>
+            <th scope="col">Quantity</th>
+            <th scope="col">Rate</th>
+            <th scope="col">Discount</th>
+            <th scope="col">Tax</th>
+            <th scope="col">Amount</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody id="table_body">
+          <tr>
+            <td>
+                <textarea name="item_details" class="form-control form_control border border-0" aria-label="With textarea" ></textarea>
+            </td>
+            <td>
+                <input name="quantity" id="quantity" class="table border-0 form_control" type="number">
+            </td>
+            <td>
+                <input name="rate" id="rate" class="table border-0 form_control" type="number">
+            </td>
+            <td>
+                <input name="discount" id="discount" class="table border-0 form_control" type="number">
+            </td>
+            <td> 
+                <input name="tax" id="tax" class="table border-0 form_control" type="number">
+            </td>
+              <td>
+                <input name="amount" id="amount" class="table border-0 form_control" type="number">
+            </td>
+            <td>
+              <div class="action_container">
+                <button class="text-danger bg-white" onclick="remove_tr(this)">
+                    <i class="bi bi-x-circle text-danger"></i>
+                </button>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="action_container mt-2">
+        <button class="success" onclick="create_tr('table_body',event)">
+            <i class="bi bi-plus">Add New</i>
+        </button>
+      </div>
+      <div class="row">
+        <div class="col-6">
+            <div class="mt-4">
+                <label for="">Customer Notes</label>
+                    <textarea name="" class="form-control form_control border rounded-0" aria-label="With textarea" ></textarea>
+              </div>
+              <div class="mt-4">
+                <label for="">Terms & Conditions </label>
+                    <textarea name="" class="form-control form_control border rounded-0" aria-label="With textarea" ></textarea>
+              </div>
+        </div>
+        <div class="col-6"></div>
+    </div>
     
+      
         <div class="mt-4 mb-4">
             <input type="submit" class="btn btn-primary border rounded-1" value="Save">
             <a href="{%url 'item-list'%}" class="btn btn-light border ms-3">Cancel</a>
         </div>
     </form>
+    
 </div>
     
 </div>
 
+
+<script>
+    
+    
+</script>
 
 {%endblock%}

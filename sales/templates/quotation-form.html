@@ -26,18 +26,13 @@ table td input {
     <div class="container-fluid">
         <form action="" method="post" enctype="multipart/form-data" class=" mt-4">
             {%csrf_token%}
-            <!-- {{quoteform.as_p}}
-            {{quoteitem_form.as_p}}
-            <input type="submit"> -->
+           
     <div class="input-group mb-5">
         <span class="input-group-text" id="">Customer Name<span
                                 class="text-danger">*</span></span>
-                                <select name="customer_name" id="select-beast" class="form-select" placeholder="Select a customer..." autocomplete="off">
-                                    <!-- <option class="" >Select a Customer</option> -->
-                                    {%for customer in customers%}
-                                    <option name="customer_name">{{customer.customer_displayname}}</option>
-                                    {%endfor%}
-                                    
+                                <select name=""  class="form-control" id="">
+                                  <option value="">lf</option>
+                                  <option value="">ldlfl</option>
                                 </select>
         <div class="d-flex justify-content-between">
             <div class="">
@@ -69,111 +64,59 @@ table td input {
                 "container": "#addPhoneFieldContainer",
                 "defaultCreated": 0
               }'>
-<table class="table table-bordered table-thead-bordered mb-3">
-  <thead class="thead-light">
-    <tr>
-      <th scope="col">Item Detatils</th>
-      <th scope="col">Quantity</th>
-      <th scope="col">Rate</th>
-      <th scope="col">Discount</th>
-        <th scope="col">Tax</th>
-         <th scope="col">Amount</th>
-         <!-- <th scope="col">Total</th> -->
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
+              <table class="_table">
+                <thead>
+                  <tr>
+                    <th scope="col">Item Detatils</th>
+                    <th scope="col">Quantity</th>
+                    <th scope="col">Rate</th>
+                    <th scope="col">Discount</th>
+                    <th scope="col">Tax</th>
+                    <th scope="col">Amount</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody id="table_body">
+                  <tr>
+                    <td>
+                        <textarea name="item_details" class="form-control form_control border border-0" aria-label="With textarea" ></textarea>
+                    </td>
+                    <td>
+                        <input name="quantity" id="quantity" class="table border-0 form_control" type="number">
+                    </td>
+                    <td>
+                        <input name="rate" id="rate" class="table border-0 form_control" type="number">
+                    </td>
+                    <td>
+                        <input name="discount" id="discount" class="table border-0 form_control" type="number">
+                    </td>
+                    <td> 
+                        <input name="tax" id="tax" class="table border-0 form_control" type="number">
+                    </td>
+                      <td>
+                        <input name="amount" id="amount" class="table border-0 form_control" type="number">
+                    </td>
+                    <td>
+                      <div class="action_container">
+                        <button class="text-danger bg-white" onclick="remove_tr(this)">
+                            <i class="bi bi-x-circle text-danger"></i>
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <!-- <div class="action_container mt-2">
+                <button class="success" onclick="create_tr('table_body',event)">
+                    <i class="bi bi-plus">Add New</i>
+                </button>
+              </div> -->
 
-      <td>
-        <textarea name="item_details" class="form-control border border-0" aria-label="With textarea" ></textarea>
-      </td>
-      
-      <td>
-          <input name="quantity" id="quantity" class="table border-0" type="number">
-      </td>
-        <td>
-          <input name="rate" id="rate" class="table border-0" type="number">
-      </td>
-        <td>
-          <input name="discount" id="discount" class="table border-0" type="number">
-      </td>
-        <td> 
-          <input name="tax" id="tax" class="table border-0" type="number">
-      </td>
-        <td>
-          <input name="amount" id="amount" class="table border-0" type="number">
-      </td>
-    </tr>
-
-
-  </tbody>
-</table>
-<div id="addPhoneFieldContainer"></div>
-<a class="js-create-field form-link" href="javascript:;">
+<a class="mt-2" style="cursor: pointer;" onclick="create_tr('table_body',event)">
     <i class="bi-plus"></i> Add items
   </a>
   </div>
-      <!-- <div class="input-group mb-3">
-         <span class="input-group-text" id="">Issued by<span
-                                class="text-danger">*</span></span>
-        <input type="text" name="quote_address" class="form-control" id="" aria-describedby="basic-addon3">
-    </div>
-            <div class="input-group mb-3">
-         <span class="input-group-text" id="">Accepted by<span
-                                class="text-danger">*</span></span>
-        <input type="text" name="quote_address" class="form-control" id="" aria-describedby="basic-addon3">
-    </div>
-            <div class="input-group mb-3">
-         <span class="input-group-text" id="">Subtotal<span
-                                class="text-danger">*</span></span>
-        <input type="text" name="quote_address" class="form-control" id="" aria-describedby="basic-addon3">
-    </div>
-            <div class="input-group mb-3">
-         <span class="input-group-text" id="">Discount<span
-                                class="text-danger">*</span></span>
-        <input type="text" name="quote_address" class="form-control" id="" aria-describedby="basic-addon3">
-    </div>
-            <div class="input-group mb-3">
-         <span class="input-group-text" id="">Freight<span
-                                class="text-danger">*</span></span>
-        <input type="text" name="quote_address" class="form-control" id="" aria-describedby="basic-addon3">
-    </div>
-            <div class="input-group mb-3">
-         <span class="input-group-text" id="">Transport<span
-                                class="text-danger">*</span></span>
-        <input type="text" name="quote_address" class="form-control" id="" aria-describedby="basic-addon3">
-    </div>
-            <div class="input-group mb-3">
-         <span class="input-group-text" id="">VAT total<span
-                                class="text-danger">*</span></span>
-        <input type="text" name="quote_address" class="form-control" id="" aria-describedby="basic-addon3">
-    </div>
-            <div class="input-group mb-3">
-         <span class="input-group-text" id="">Total<span
-                                class="text-danger">*</span></span>
-        <input type="text" name="quote_address" class="form-control" id="" aria-describedby="basic-addon3">
-    </div>
-            <div class="input-group mb-3">
-         <span class="input-group-text" id="">remarks<span
-                                class="text-danger">*</span></span>
-<textarea class="form-control" aria-label="With textarea"></textarea>
-    </div>
-            <div class="input-group mb-3">
-         <span class="input-group-text" id="">Note<span
-                                class="text-danger">*</span></span>
-<textarea name="note" class="form-control" aria-label="With textarea" required></textarea>
-    </div> -->
-    <!-- <div class="input-group mb-5">
-      <span class="input-group-text" id="">Quote status<span
-                             class="text-danger">*</span></span>
-                             <select class="form-control" name="quote_status" id="">
-                              <option name="quote_status" >Select  option</option>
-                              <option name="quote_status" class="form-control" >pending</option>
-                              <option name="quote_status" class="form-control" >approved</option>
-                              <option name="quote_status" class="form-control" >cancelled</option>
-                              <option name="quote_status" class="form-control" >expired</option>
-                             </select>
- </div> -->
+      
     <div class="input-group mb-5">
         <span class="input-group-text" id="">Customer notes<span
                                class="text-danger">*</span></span>
@@ -193,31 +136,11 @@ table td input {
     </div>
 </div>
 
-<!--<form action="" method="post">-->
-<!--    {%csrf_token%}-->
-<!--    {{form.as_p}}-->
-<!--    <input type="submit">-->
-<!--</form>-->
 
-{%for customer in customers%}
-<p>
-    {{customer.customer_id}}
-    {{customer.customer_displayname}}
-    {{customer.cusotmer_email}}
-    {{customer.company_name}}
-</p>
-{%endfor%}
 
 
 <script>
- new TomSelect("#select-beast",{
-	create: false,
-	sortField: {
-		field: "text",
-		direction: "asc"
-	}
-});
-
+ 
 
 
 </script>
