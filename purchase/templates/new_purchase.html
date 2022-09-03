@@ -1,0 +1,213 @@
+{%extends 'dashboard-home.html'%}
+{%load static%}
+{%block content%}
+<style>
+    table td {
+        position: relative;
+    }
+
+    table td input {
+        position: absolute;
+        display: block;
+        top: 0;
+        left: 0;
+        margin: 0;
+        height: 100%;
+        width: 100%;
+        border: none;
+        padding: 10px;
+        box-sizing: border-box;
+    }
+</style>
+<div class="">
+    <h3> New Purchase Order</h3>
+</div>
+<div class="card">
+    <div class="container-fluid">
+        <form action="" method="post">
+            {%csrf_token%}
+            <div class="row ">
+                <div class="col-lg-2">
+                    <label for="" class="text-danger mt-5 ">Vendor Name*</label>
+                </div>
+                <div class="col-lg-6">
+
+                    <div class=" ">
+                        <select name="" id="" class="form-select rounded-0  mt-4 " placeholder="Select a customer..." 
+                            autocomplete="off">
+
+                            <option class="form-control" name="customer_name">abcd</option>
+                            <option name="customer_name">efg</option>
+                        </select>
+
+                    </div>
+
+                    <!-- End Select -->
+                </div>
+                <div class="col-lg-8">
+                    <div class="row mt-4">
+                        <div class="col-lg-3">
+                            <label for="" class="text-danger mt-2">Deliver To*</label>
+
+                        </div>
+                        <div class="col-lg-9">
+                            <div class="mb-4">
+                                <input type="text" name="" class="form-control rounded-0">
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4"></div>
+            </div>
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="row">
+                        <div class="col-lg-3">
+                            <label for="" class="mt-2 text-danger">Purchase Order#*</label>
+                        </div>
+                        <div class="col-lg-9">
+
+                            <div class="mb-4">
+                                <input type="text" name="" class="form-control  rounded-0" style="border:1px solid lightgray ;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4"></div>
+            </div>
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="row">
+                        <div class="col-lg-3">
+                            <label for="" class="mt-2">Reference#</label>
+                        </div>
+                        <div class="col-lg-9">
+
+                            <div class="mb-4">
+                                <input type="text" name="" class="form-control  rounded-0" style="border:1px solid lightgray ;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4"></div>
+            </div>
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="row">
+                        <div class="col-lg-3">
+                            <label for="" class=" mt-2">Date </label>
+                        </div>
+                        <div class="col-lg-9">
+
+                            <div class="mb-4">
+                                <input type="date" name="" class="form-control   rounded-0" style="border:1px solid lightgray ;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4"></div>
+            </div>
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="row">
+                        <div class="col-lg-3">
+                            <label for="" class=" mt-2">Expected Delivery Date</label>
+                        </div>
+                        <div class="col-lg-9">
+
+                            <div class="mb-4">
+                                <input type="date" name="" class="form-control  rounded-0" style="border:1px solid lightgray ;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4"></div>
+            </div>
+            <hr>
+
+            <table class="_table">
+                <thead>
+                    <tr>
+                        <th scope="col">Item Detatils</th>
+                        <th scope="col">Account</th>
+                        <th scope="col">Quantity</th>
+                        <th scope="col">Rate</th>
+                        
+                        <th scope="col">Tax</th>
+                        <th scope="col">Amount</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody id="table_body">
+                    <tr>
+                        <td>
+                            <textarea name="item_details" class="form-control form_control border border-0"
+                                aria-label="With textarea"></textarea>
+                        </td>
+                        <td>
+                            <select name="" class="form-select border-0" id="">
+                                <option value="">select account</option>
+                                <option value="">account1</option>
+                                <option value="">account2</option>
+                                
+                            </select>
+                        </td>
+                        <td>
+                            <input name="rate" id="rate" class="table border-0 form_control" type="number">
+                        </td>
+                        <td>
+                            <input name="discount" id="discount" class="table border-0 form_control" type="number">
+                        </td>
+                        <td>
+                            <input name="tax" id="tax" class="table border-0 form_control" type="number">
+                        </td>
+                        <td>
+                            <input name="amount" id="amount" class="table border-0 form_control" type="number">
+                        </td>
+                        <td>
+                            <div class="action_container">
+                                <button class="text-danger bg-white" onclick="remove_tr(this)">
+                                    <i class="bi bi-x-circle text-danger"></i>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="action_container mt-2">
+                <button class="success" onclick="create_tr('table_body',event)">
+                    <i class="bi bi-plus">Add New</i>
+                </button>
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    <div class="mt-4">
+                        <label for="">Customer Notes</label>
+                        <textarea name="" class="form-control form_control  rounded-0" style="border:1px solid lightgray ;"
+                            aria-label="With textarea"></textarea>
+                    </div>
+                    <div class="mt-4">
+                        <label for="">Terms & Conditions </label>
+                        <textarea name="" class="form-control form_control  rounded-0" style="border:1px solid lightgray ;"
+                            aria-label="With textarea"></textarea>
+                    </div>
+                </div>
+                <div class="col-6"></div>
+            </div>
+
+
+            <div class="mt-4 mb-4">
+                <input type="submit" class="btn btn-primary border rounded-1" value="Save">
+                <a href="{%url 'purchase-list'%}" class="btn btn-light border ms-3">Cancel</a>
+            </div>
+        </form>
+
+    </div>
+
+</div>
+
+
+
+
+{%endblock%}

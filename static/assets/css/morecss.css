@@ -107,3 +107,17 @@ body {
     transition: unset;
     transform: scale(.95);
 }
+
+.border_property{
+    border:1px solid lightgray ;
+    
+}
+
+.address_background{
+    
+    width: 100%;
+    height: 3rem;
+    border-bottom:2px solid #e7e7e7;
+    border-top:2px solid #e7e7e7;
+    
+}

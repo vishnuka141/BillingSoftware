@@ -1,6 +1,24 @@
 {%extends 'dashboard-home.html'%}
 {%load static%}
 {%block content%}
+<style>
+    table td {
+        position: relative;
+    }
+
+    table td input {
+        position: absolute;
+        display: block;
+        top: 0;
+        left: 0;
+        margin: 0;
+        height: 100%;
+        width: 100%;
+        border: none;
+        padding: 10px;
+        box-sizing: border-box;
+    }
+</style>
 <div class="" >
     <h3 >New Invoice</h3> 
 </div>
@@ -15,7 +33,7 @@
             <div class="col-lg-6">
 
                 <div class="tom-select-custom ">
-                    <select name="" id="select-beast"  class="form-select  mt-3"  placeholder="Select a customer..." autocomplete="off">
+                    <select name="" id="select-beast"  class="form-select border_property rounded-0  mt-3"  placeholder="Select a customer..." autocomplete="off">
 
                         <option class="form-control"  name="customer_name">abcd</option>
                         <option name="customer_name">efg</option>
@@ -28,12 +46,12 @@
             <div class="col-lg-8">
                 <div class="row mt-4">
                     <div class="col-lg-3">
-                            <label for="" class="text-danger">Invoice#</label>
+                            <label for="" class="text-danger mt-2">Invoice#</label>
 
                     </div>
                     <div class="col-lg-9">
                         <div class="mb-4">
-                        <input type="text"  name=""  class="form-control border rounded-0">
+                        <input type="text"  name=""  class="form-control border_property rounded-0 ">
                         </div>
 
                     </div>
@@ -45,12 +63,12 @@
             <div class="col-lg-8">
                 <div class="row">
                     <div class="col-lg-3">
-                        <label for="" class="">Order Number</label>
+                        <label for="" class=" mt-2">Order Number</label>
                     </div>
                     <div class="col-lg-9">
                         
                         <div class="mb-4">
-                            <input type="text"  name=""  class="form-control border rounded-0">
+                            <input type="text"  name=""  class="form-control border_property rounded-0 ">
                         </div>
                     </div>
                 </div>
@@ -61,12 +79,12 @@
             <div class="col-lg-8">
                 <div class="row">
                     <div class="col-lg-3">
-                        <label for="" class="">Invoice Date</label>
+                        <label for="" class=" mt-2">Invoice Date</label>
                     </div>
                     <div class="col-lg-9">
                         
                         <div class="mb-4">
-                            <input type="date"  name=""  class="form-control border rounded-0">
+                            <input type="date"  name=""  class="form-control border_property rounded-0 ">
                         </div>
                     </div>
                 </div>
@@ -77,12 +95,12 @@
             <div class="col-lg-8">
                 <div class="row">
                     <div class="col-lg-3">
-                        <label for="" class="">Supply Date</label>
+                        <label for="" class=" mt-2">Supply Date</label>
                     </div>
                     <div class="col-lg-9">
                         
                         <div class="mb-4">
-                            <input type="date"  name=""  class="form-control border rounded-0">
+                            <input type="date"  name=""  class="border_property form-control  rounded-0 ">
                         </div>
                     </div>
                 </div>
@@ -142,11 +160,11 @@
         <div class="col-6">
             <div class="mt-4">
                 <label for="">Customer Notes</label>
-                    <textarea name="" class="form-control form_control border rounded-0" aria-label="With textarea" ></textarea>
+                    <textarea name="" class="form-control form_control border_property rounded-0" aria-label="With textarea" ></textarea>
               </div>
               <div class="mt-4">
                 <label for="">Terms & Conditions </label>
-                    <textarea name="" class="form-control form_control border rounded-0" aria-label="With textarea" ></textarea>
+                    <textarea name="" class="form-control form_control border_property rounded-0" aria-label="With textarea" ></textarea>
               </div>
         </div>
         <div class="col-6"></div>
@@ -164,9 +182,6 @@
 </div>
 
 
-<script>
-    
-    
-</script>
+
 
 {%endblock%}

@@ -9,10 +9,9 @@ urlpatterns = [
   path('customers/list/',views.customers_list,name='customers-list'),
   path('invoices/list/',views.invoices_list,name='invoices-list'),
   path('invoices/new/',views.create_invoice,name='new-invoice'),
-  path('vendors/list/',views.vendors_list,name='vendors-list'),
-  path('purchse/list/',views.purchase_orders_list,name='purchase-list'),
-  path('vendors_credit/list/',views.vendor_credit,name='vendors-credit'),
-  path('expenses/list/',views.expenses,name='expenses'),
+  path('delivery/new/',views.create_delivery,name='new-delivery'),
+  path('delivery/list/',views.delivery,name='delivery-list'),
+ 
   path('credit_notes/list/',views.credit_notes,name='credit_notes'),
-  path('delivery/list/',views.delivery,name='delivery'),
+  
 ]

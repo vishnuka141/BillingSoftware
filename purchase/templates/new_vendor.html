@@ -1,0 +1,187 @@
+{%extends 'dashboard-home.html'%}
+{%load static%}
+{%block content%}
+
+<div class="">
+    <h3> New Vendor</h3>
+</div>
+<div class="card">
+    <div class="container-fluid">
+        <form action="" method="post">
+            {%csrf_token%}
+
+            <div class="row ">
+                <div class="col-lg-8">
+                    <div class="row mt-4">
+                        <div class="col-lg-3">
+                            <label for="" class=" mt-2">Company Name</label>
+                        </div>
+                        <div class="col-lg-9">
+                            <div class="mb-4">
+                                <input type="text" name="" class="form-control rounded-0 ">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row ">
+                        <div class="col-lg-3">
+                            <label for="" class=" mt-2 ">Vendor Email</label>
+                        </div>
+                        <div class="col-lg-9">
+                            <div class="mb-4">
+                                <input type="email" name="" class="form-control rounded-0 ">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row ">
+                        <div class="col-lg-3">
+                            <label for="" class=" mt-2">Vendor Phone</label>
+                        </div>
+                        <div class="col-lg-9">
+                            <div class="mb-4">
+                                <div class="row">
+                                    <div class="col-lg-6"><input type="text" name=""
+                                            class="form-control rounded-0 mb-3 mb-md-0" placeholder="Work Phone"></div>
+                                    <div class="col-lg-6 "> <input type="text" name="" class="form-control rounded-0 "
+                                            placeholder="Mobile"></div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-lg-4"></div>
+            </div>
+
+            <div class="address_background mt-4 bg-light">
+                <h4 class="text-secondary mt-3 ms-2">Address</h4>
+            </div>
+            <!-- address -->
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="row">
+                        <h5 class="mt-4 text-secondary">BILLING ADDRESS</h5>
+                        <div class="col-lg-4">
+                            <label for="" class="mt-5">Country/Region</label>
+                        </div>
+                        <div class="col-lg-7">
+                            <input type="text" name="" class="form-control rounded-0 mt-0 mt-md-4">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <label for="" class="mt-5">Address</label>
+                        </div>
+                        <div class="col-lg-7">
+                            <textarea name="" class="form-control form_control  rounded-0 mt-0 mt-md-4 "
+                                aria-label="With textarea" placeholder="Building Number"></textarea>
+                            <textarea name="" class="form-control form_control  rounded-0 mt-4"
+                                aria-label="With textarea" placeholder="Street"></textarea>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <label for="" class="mt-5">City</label>
+                        </div>
+                        <div class="col-lg-7">
+                            <input type="text" name="" class="form-control rounded-0 mt-0 mt-md-4">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <label for="" class="mt-5">State</label>
+                        </div>
+                        <div class="col-lg-7">
+                            <input type="text" name="" class="form-control rounded-0 mt-0 mt-md-4">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <label for="" class="mt-5">Zipcode</label>
+                        </div>
+                        <div class="col-lg-7">
+                            <input type="text" name="" class="form-control rounded-0 mt-0 mt-md-4">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <label for="" class="mt-5">Phone</label>
+                        </div>
+                        <div class="col-lg-7">
+                            <input type="text" name="" class="form-control rounded-0 mt-0 mt-md-4">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="row">
+                        <h5 class="mt-5 text-secondary mt-md-4">SHIPPING ADDRESS</h5>
+                        <div class="col-lg-4">
+                            <label for="" class="mt-5">Country/Region</label>
+                        </div>
+                        <div class="col-lg-8">
+                            <input type="text" name="" class="form-control rounded-0 mt-0 mt-md-4">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <label for="" class="mt-5">Address</label>
+                        </div>
+                        <div class="col-lg-8">
+                            <textarea name="" class="form-control form_control  rounded-0 mt-0 mt-md-4 "
+                                aria-label="With textarea" placeholder="Building Number"></textarea>
+                            <textarea name="" class="form-control form_control  rounded-0 mt-4"
+                                aria-label="With textarea" placeholder="Street"></textarea>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <label for="" class="mt-5">City</label>
+                        </div>
+                        <div class="col-lg-8">
+                            <input type="text" name="" class="form-control rounded-0 mt-0 mt-md-4">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <label for="" class="mt-5">State</label>
+                        </div>
+                        <div class="col-lg-8">
+                            <input type="text" name="" class="form-control rounded-0 mt-0 mt-md-4">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <label for="" class="mt-5">Zipcode</label>
+                        </div>
+                        <div class="col-lg-8">
+                            <input type="text" name="" class="form-control rounded-0 mt-0 mt-md-4">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <label for="" class="mt-5">Phone</label>
+                        </div>
+                        <div class="col-lg-8">
+                            <input type="text" name="" class="form-control rounded-0 mt-0 mt-md-4">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="mt-5 mb-4">
+                <input type="submit" class="btn btn-primary border rounded-1" value="Save">
+                <a href="{%url 'vendors-list'%}" class="btn btn-light border ms-3">Cancel</a>
+            </div>
+        </form>
+
+    </div>
+
+</div>
+
+
+
+
+{%endblock%}

@@ -1,148 +1,380 @@
 {%extends 'dashboard-home.html'%}
 {%load static%}
 {%block content%}
-<h2>New Customer </h2>
+
+<div class="">
+    <h3> New Vendor</h3>
+</div>
 <div class="card">
     <div class="container-fluid">
-        
-        <form action="" method="post" class="">
+        <form action="" method="post">
             {%csrf_token%}
-            
-            <div class="input-group mb-3 mt-4">
-                <span class="input-group-text" id="">Company name<span
-                                       class="text-danger">*</span></span>
-               <input type="text" name="company_name" class="form-control" id="" aria-describedby="basic-addon3">
-           </div>
-           <div class="row">
-            <label for="" class="mt-3 mb-1">Customer display name:</label>
-            <div class="col-6">
-                
-                <div class="input-group mb-3">
-                    
-                    <span class="input-group-text" id="">
-                        <span style="font-size: 14px;">In primary language</span><span
-                                           class="text-danger">*</span></span>
-                   <input type="text" name="customer_displayname" class="form-control" id="" aria-describedby="basic-addon3">
-               </div>
-            
-               <div class="input-group mb-3">
-                <span class="input-group-text" id="">Email<span
-                                       class="text-danger">*</span></span>
-               <input type="email" name="cusotmer_email" class="form-control" id="" aria-describedby="basic-addon3">
-            </div>
-            
 
-            </div>
-            <div class="col-6">
-                <div class="input-group mb-3">
-                    <span class="input-group-text" id="" style="font-size: 14px;">In secondary language (Arabic)<span
-                                           class="text-danger">*</span></span>
-                   <input type="text" name="display_name_arabic" class="form-control" id="" aria-describedby="basic-addon3">
-                </div>
+            <div class="row ">
+                <div class="col-lg-8">
+                    <div class="row mt-4">
+                        <div class="col-lg-3">
+                            <label for="" class=" mt-2">Company Name</label>
+                        </div>
+                        <div class="col-lg-9">
+                            <div class="mb-4">
+                                <input type="text" name="" class="form-control rounded-0 ">
+                            </div>
+                        </div>
+                    </div>
 
-                <div class="input-group mb-3">
-                    <span class="input-group-text" id="">Phone<span
-                                           class="text-danger">*</span></span>
-                   <input type="text" name="customer_phone" class="form-control" id="" required aria-describedby="basic-addon3">
-                </div>
-            </div>
-            <div class="input-group mb-3">
-                
-                <select class="form-control" name="buyer_id_options" id="">
-                 <option name="buyer_id_options" >Select  option</option>
-                 <option name="buyer_id_options" class="form-control" >NAT</option>
-                 <option name="buyer_id_options" class="form-control" >TIN</option>
-                 <option name="buyer_id_options" class="form-control" >IQA</option>
-                 <option name="buyer_id_options" class="form-control" >PAS</option>
-                 <option name="buyer_id_options" class="form-control" >CRN</option>
-                 <option name="buyer_id_options"  class="form-control">MOM</option>
-                 <option name="buyer_id_options" class="form-control" >MLS</option>
-                 <option name="buyer_id_options" class="form-control" >SAG</option>
-                 <option name="buyer_id_options" class="form-control" >GCC</option>
-                 <option name="buyer_id_options" class="form-control" >OTH</option>
-                </select>
-                <span class="input-group-text" id="">Buyer Id<span
-                 class="text-danger">*</span></span>
-                 <input type="text" name="buyer_id" class="form-control" id="" aria-describedby="basic-addon3">
-             </div>
-           </div>
-<hr>
-           <div class="row">
-            <div class="text-cente mb-3"><h4 class="text-secondary">Address</h4></div>
-            <div class="col-6">
-                <label style="font-size: 14px;" class="mb-2" for="">In Primary Language</label>
-                <div class="input-group mb-3">
-                    <span class="input-group-text" id="">Country/Region<span
-                                           class="text-danger">*</span></span>
-                   <input type="text" name="country_or_region" class="form-control" id="" aria-describedby="basic-addon3">
-                </div>
+                    <div class="row ">
+                        <div class="col-lg-3">
+                            <label for="" class=" mt-2 text-danger">Customer Display Name*</label>
+                        </div>
+                        <div class="col-lg-9">
+                            <div class="mb-4">
+                                <label for="" style="font-size: 12px;">In Primary Language</label>
+                                <input type="text" name="" class="form-control rounded-0 ">
+                                <label for="" style="font-size: 12px;" class="mt-3">In Secondary Language (Arabic)</label>
+                                <input type="text" name="" class="form-control rounded-0 ">
+                            </div>
+                        </div>
+                    </div>
 
-                <div class="input-group mb-3">
-                    <span class="input-group-text" id="">Building Number<span
-                                           class="text-danger">*</span></span>
-                   <input type="text" name="building_number" class="form-control" id="" aria-describedby="basic-addon3">
-                </div>
-                <div class="input-group mb-3">
-                    <span class="input-group-text" id="">Street<span
-                                           class="text-danger">*</span></span>
-                   <input type="text" name="street" class="form-control" id="" aria-describedby="basic-addon3">
-                </div>
-                <div class="input-group mb-3">
-                    <span class="input-group-text" id="">City<span
-                                           class="text-danger">*</span></span>
-                   <input type="text" name="city" class="form-control" id="" aria-describedby="basic-addon3">
-                </div>
-                <div class="input-group mb-3">
-                    <span class="input-group-text" id="">Zip code<span
-                                           class="text-danger">*</span></span>
-                   <input type="text" name="zipcode" class="form-control" id="" aria-describedby="basic-addon3">
-                </div>
-                <div class="input-group mb-3">
-                    <span class="input-group-text" id="">Phone no.<span
-                                           class="text-danger">*</span></span>
-                   <input type="text" name="phone_no" class="form-control" id="" aria-describedby="basic-addon3">
-                </div>
-            </div>
-            <div class="col-6">
-                <label style="font-size: 14px;" for="" class="mb-2">In Secondary Language (Arabic)</label>
-                <div class="input-group mb-3">
-                    <span class="input-group-text" id="">Country/Region<span
-                                           class="text-danger">*</span></span>
-                   <input type="text" name="country_arabic" class="form-control" id="" aria-describedby="basic-addon3">
-                </div>
-                <div class="input-group mb-3">
-                    <span class="input-group-text" id="">Building Number<span
-                                           class="text-danger">*</span></span>
-                   <input type="text" name="arabic_bdnumber" class="form-control" id="" aria-describedby="basic-addon3">
-                </div>
-                <div class="input-group mb-3">
-                    <span class="input-group-text" id="">Street<span
-                                           class="text-danger">*</span></span>
-                   <input type="text" name="arabic_street" class="form-control" id="" aria-describedby="basic-addon3">
-                </div>
-                <div class="input-group mb-3">
-                    <span class="input-group-text" id="">City<span
-                                           class="text-danger">*</span></span>
-                   <input type="text" name="city_arabic" class="form-control" id="" aria-describedby="basic-addon3">
-                </div>
-                <div class="input-group mb-3">
-                    <span class="input-group-text" id="">Zip code<span
-                                           class="text-danger">*</span></span>
-                   <input type="text" name="zipcode_arabic" class="form-control" id="" aria-describedby="basic-addon3">
-                </div>
-                <!-- <div class="input-group mb-3">
-                    <span class="input-group-text" id="">Phone no.<span
-                                           class="text-danger">*</span></span>
-                   <input type="text" name="phone_no" class="form-control" id="" aria-describedby="basic-addon3">
-                </div> -->
-            </div>
-           </div>
+                    <div class="row ">
+                        <div class="col-lg-3">
+                            <label for="" class=" mt-2">Customer Email</label>
+                        </div>
+                        <div class="col-lg-9">
+                            <div class="mb-4">
+                               
+                                    <input type="text" class="form-control rounded-0">
 
-           
-<input type="submit" class="btn btn-primary mb-2" value="Save">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row ">
+                        <div class="col-lg-3">
+                            <label for="" class=" mt-2">Customer Phone</label>
+                        </div>
+                        <div class="col-lg-9">
+                            <div class="mb-4">
+                                <div class="row">
+                                    <div class="col-lg-6"><input type="text" name=""
+                                            class="form-control rounded-0 mb-3 mb-md-0" placeholder="Work Phone"></div>
+                                    <div class="col-lg-6 "> <input type="text" name="" class="form-control rounded-0 "
+                                            placeholder="Mobile"></div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-lg-4"></div>
+            </div>
+
+            <div class="address_background mt-4 bg-light">
+                <h4 class="text-secondary mt-3 ms-2">Address</h4>
+            </div>
+<!--billing address -->
+<div class="row">
+                <div class="col-lg-6">
+                    <div class="row">
+                        <h5 class="mt-4 text-secondary">BILLING ADDRESS</h5>
+                        <div class="col-lg-4">
+                            <label for="" class="mt-5">Country/Region</label>
+                        </div>
+                        <div class="col-lg-7">
+                            <input type="text" name="" class="form-control rounded-0 mt-0 mt-md-4">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <label for="" class="mt-5">Address</label>
+                        </div>
+                        <div class="col-lg-7">
+                            <textarea name="" class="form-control form_control  rounded-0 mt-0 mt-md-4 "
+                                aria-label="With textarea" placeholder="Building Number"></textarea>
+                            <textarea name="" class="form-control form_control  rounded-0 mt-4"
+                                aria-label="With textarea" placeholder="Street"></textarea>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <label for="" class="mt-5">Additional Number</label>
+                        </div>
+                        <div class="col-lg-7">
+                            <input type="text" name="" class="form-control rounded-0 mt-0 mt-md-4">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <label for="" class="mt-5">District</label>
+                        </div>
+                        <div class="col-lg-7">
+                            <input type="text" name="" class="form-control rounded-0 mt-0 mt-md-4">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <label for="" class="mt-5">City</label>
+                        </div>
+                        <div class="col-lg-7">
+                            <input type="text" name="" class="form-control rounded-0 mt-0 mt-md-4">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <label for="" class="mt-5">State</label>
+                        </div>
+                        <div class="col-lg-7">
+                            <input type="text" name="" class="form-control rounded-0 mt-0 mt-md-4">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <label for="" class="mt-5">Zipcode</label>
+                        </div>
+                        <div class="col-lg-7">
+                            <input type="text" name="" class="form-control rounded-0 mt-0 mt-md-4">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <label for="" class="mt-5">Phone</label>
+                        </div>
+                        <div class="col-lg-7">
+                            <input type="text" name="" class="form-control rounded-0 mt-0 mt-md-4">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="row">
+                        <label for="" class="mt-5 text-secondary"><strong>In Secondary Language (Arabic)</strong></label>
+                        <div class="col-lg-4">
+                            <label for="" class="mt-5">Country/Region</label>
+                        </div>
+                        <div class="col-lg-8">
+                            <input type="text" name="" class="form-control rounded-0 mt-0 mt-md-4">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <label for="" class="mt-5">Address</label>
+                        </div>
+                        <div class="col-lg-8">
+                            <textarea name="" class="form-control form_control  rounded-0 mt-0 mt-md-4 "
+                                aria-label="With textarea" placeholder="Building Number"></textarea>
+                            <textarea name="" class="form-control form_control  rounded-0 mt-4"
+                                aria-label="With textarea" placeholder="Street"></textarea>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <label for="" class="mt-5">Additional Number</label>
+                        </div>
+                        <div class="col-lg-7">
+                            <input type="text" name="" class="form-control rounded-0 mt-0 mt-md-4">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <label for="" class="mt-5">District</label>
+                        </div>
+                        <div class="col-lg-7">
+                            <input type="text" name="" class="form-control rounded-0 mt-0 mt-md-4">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <label for="" class="mt-5">City</label>
+                        </div>
+                        <div class="col-lg-8">
+                            <input type="text" name="" class="form-control rounded-0 mt-0 mt-md-4">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <label for="" class="mt-5">State</label>
+                        </div>
+                        <div class="col-lg-8">
+                            <input type="text" name="" class="form-control rounded-0 mt-0 mt-md-4">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <label for="" class="mt-5">Zipcode</label>
+                        </div>
+                        <div class="col-lg-8">
+                            <input type="text" name="" class="form-control rounded-0 mt-0 mt-md-4">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <label for="" class="mt-5">Phone</label>
+                        </div>
+                        <div class="col-lg-8">
+                            <input type="text" name="" class="form-control rounded-0 mt-0 mt-md-4">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- shipping address -->
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="row">
+                        <h5 class="mt-4 text-secondary">SHIPPING ADDRESS</h5>
+                        <div class="col-lg-4">
+                            <label for="" class="mt-5">Country/Region</label>
+                        </div>
+                        <div class="col-lg-7">
+                            <input type="text" name="" class="form-control rounded-0 mt-0 mt-md-4">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <label for="" class="mt-5">Address</label>
+                        </div>
+                        <div class="col-lg-7">
+                            <textarea name="" class="form-control form_control  rounded-0 mt-0 mt-md-4 "
+                                aria-label="With textarea" placeholder="Building Number"></textarea>
+                            <textarea name="" class="form-control form_control  rounded-0 mt-4"
+                                aria-label="With textarea" placeholder="Street"></textarea>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <label for="" class="mt-5">Additional Number</label>
+                        </div>
+                        <div class="col-lg-7">
+                            <input type="text" name="" class="form-control rounded-0 mt-0 mt-md-4">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <label for="" class="mt-5">District</label>
+                        </div>
+                        <div class="col-lg-7">
+                            <input type="text" name="" class="form-control rounded-0 mt-0 mt-md-4">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <label for="" class="mt-5">City</label>
+                        </div>
+                        <div class="col-lg-7">
+                            <input type="text" name="" class="form-control rounded-0 mt-0 mt-md-4">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <label for="" class="mt-5">State</label>
+                        </div>
+                        <div class="col-lg-7">
+                            <input type="text" name="" class="form-control rounded-0 mt-0 mt-md-4">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <label for="" class="mt-5">Zipcode</label>
+                        </div>
+                        <div class="col-lg-7">
+                            <input type="text" name="" class="form-control rounded-0 mt-0 mt-md-4">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <label for="" class="mt-5">Phone</label>
+                        </div>
+                        <div class="col-lg-7">
+                            <input type="text" name="" class="form-control rounded-0 mt-0 mt-md-4">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="row">
+                        <label for="" class="mt-5 text-secondary"><strong>In Secondary Language (Arabic)</strong></label>
+                        <div class="col-lg-4">
+                           
+                            <label for="" class="mt-5">Country/Region</label>
+                        </div>
+                        <div class="col-lg-8">
+                            
+                            <input type="text" name="" class="form-control rounded-0 mt-0 mt-md-4">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <label for="" class="mt-5">Address</label>
+                        </div>
+                        <div class="col-lg-8">
+                            <textarea name="" class="form-control form_control  rounded-0 mt-0 mt-md-4 "
+                                aria-label="With textarea" placeholder="Building Number"></textarea>
+                            <textarea name="" class="form-control form_control  rounded-0 mt-4"
+                                aria-label="With textarea" placeholder="Street"></textarea>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <label for="" class="mt-5">Additional Number</label>
+                        </div>
+                        <div class="col-lg-7">
+                            <input type="text" name="" class="form-control rounded-0 mt-0 mt-md-4">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <label for="" class="mt-5">District</label>
+                        </div>
+                        <div class="col-lg-7">
+                            <input type="text" name="" class="form-control rounded-0 mt-0 mt-md-4">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <label for="" class="mt-5">City</label>
+                        </div>
+                        <div class="col-lg-8">
+                            <input type="text" name="" class="form-control rounded-0 mt-0 mt-md-4">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <label for="" class="mt-5">State</label>
+                        </div>
+                        <div class="col-lg-8">
+                            <input type="text" name="" class="form-control rounded-0 mt-0 mt-md-4">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <label for="" class="mt-5">Zipcode</label>
+                        </div>
+                        <div class="col-lg-8">
+                            <input type="text" name="" class="form-control rounded-0 mt-0 mt-md-4">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <label for="" class="mt-5">Phone</label>
+                        </div>
+                        <div class="col-lg-8">
+                            <input type="text" name="" class="form-control rounded-0 mt-0 mt-md-4">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="mt-5 mb-4">
+                <input type="submit" class="btn btn-primary border rounded-1" value="Save">
+                <a href="{%url 'vendors-list'%}" class="btn btn-light border ms-3">Cancel</a>
+            </div>
         </form>
 
     </div>
-    </div>
+
+</div>
+
+
+
 
 {%endblock%}

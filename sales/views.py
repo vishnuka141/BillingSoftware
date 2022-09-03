@@ -98,19 +98,15 @@ def invoices_list(request):
     return render(request,'invoices.html')
 def create_invoice(request):
     return render(request,'create_invoice.html')
-
-def vendors_list(request):
-    return render(request,'vendors.html')    
-def purchase_orders_list(request):
-    return render(request,'purchase.html')
-def vendor_credit(request):
-    return render(request,'vendors_credit.html')
-def expenses(request):
-    return render(request,'expenses.html')
-def credit_notes(request):
-    return render(request,'credit_notes.html')
 def delivery(request):
     return render(request,'delivery.html')
+def create_delivery(request):
+    return render(request,'create_delivery.html')
+
+
+def credit_notes(request):
+    return render(request,'credit_notes.html')
+
 
 
 

@@ -2,16 +2,16 @@
 {%load static%}
 {%block content%}
 <div class="d-flex justify-content-between mt-3 mb-3">
-    <div><h3 class="container mt-3">Vendors</h3></div>
+    <div><h3 class="container ">Purchase orders</h3></div>
     <div>
-    <a class="btn btn-primary" href="" >
-                <i class="bi bi-plus-circle"></i> New Vendor
+    <a class="btn btn-primary" href="{%url 'new-purchase'%}" >
+                <i class="bi bi-plus-circle"></i> New
               </a>
     </div>
   </div>
 <div class="card">
     <div class="card-header">
-      <h4 class="card-header-title">Vendors</h4>
+      <h4 class="card-header-title">Orders</h4>
     </div>
   
     <!-- Table -->
@@ -25,11 +25,11 @@
                    }'>
         <thead class="thead-light">
         <tr>
-          <th>Name</th>
-          <th>Email</th>
-          <th>Phone</th>
-          <th>Customer name</th>
-          <th>Website</th>
+          <th>Purchase order</th>
+          <th>Date</th>
+          <th>Vendor Name</th>
+          <th></th>
+          <th></th>
           
         </tr>
         </thead>
