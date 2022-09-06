@@ -68,7 +68,7 @@ def quotation_create_view(request):
     else:
         customers = Customer.objects.filter(created_user=request.user)
         context = {"quoteform":Quote_form(),"quoteitem_form":Quoteitem_form(),"customers":customers}
-        return render(request,'quotation-form.html',context)
+        return render(request,'create_quotation.html',context)
 
 def customer_create_view(request,**kwargs):
     
@@ -94,10 +94,12 @@ def customer_create_view(request,**kwargs):
 
 def customers_list(request):
     return render(request,'customers.html')
+
 def invoices_list(request):
     return render(request,'invoices.html')
 def create_invoice(request):
     return render(request,'create_invoice.html')
+
 def delivery(request):
     return render(request,'delivery.html')
 def create_delivery(request):
@@ -106,8 +108,8 @@ def create_delivery(request):
 
 def credit_notes(request):
     return render(request,'credit_notes.html')
-
-
+def create_credit_notes(request):
+    return render(request,'create_credit_note.html')
 
 
 

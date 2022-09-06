@@ -20,7 +20,7 @@
     }
 </style>
 <div class="" >
-    <h3 >New Invoice</h3> 
+    <h3 >New Credit Note</h3> 
 </div>
 <div class="card">
 <div class="container-fluid">
@@ -55,12 +55,19 @@
             <div class="col-lg-8">
                 <div class="row mt-4">
                     <div class="col-lg-3">
-                            <label for="" class="text-danger mt-2">Invoice#</label>
+                            <label for="" class="text-danger mt-2">Reason*</label>
 
                     </div>
                     <div class="col-lg-9">
                         <div class="mb-4">
-                        <input type="text"  name=""  class="form-control border_property rounded-0 ">
+                        <select name="" class="form-select rounded-0" id="">
+                            <option value=""></option>
+                            <option value="">Cancellation of supplies either wholly or partially</option>
+                            <option value="">Changes to VAT due</option>
+                            <option value="">Changes to the value of supply</option>
+                            <option value="">Goods or services refund</option>
+                            <option value="">Others</option>
+                        </select>
                         </div>
 
                     </div>
@@ -72,7 +79,7 @@
             <div class="col-lg-8">
                 <div class="row">
                     <div class="col-lg-3">
-                        <label for="" class=" mt-2">Order Number</label>
+                        <label for="" class=" mt-2 text-danger">Credit Note#*</label>
                     </div>
                     <div class="col-lg-9">
                         
@@ -88,7 +95,23 @@
             <div class="col-lg-8">
                 <div class="row">
                     <div class="col-lg-3">
-                        <label for="" class=" mt-2">Invoice Date</label>
+                        <label for="" class=" mt-2">Reference#</label>
+                    </div>
+                    <div class="col-lg-9">
+                        
+                        <div class="mb-4">
+                            <input type="text"  name=""  class="form-control border_property rounded-0 ">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4"></div>
+        </div>
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="row">
+                    <div class="col-lg-3">
+                        <label for="" class="text-danger mt-2">Credit Note Date*</label>
                     </div>
                     <div class="col-lg-9">
                         
@@ -104,12 +127,20 @@
             <div class="col-lg-8">
                 <div class="row">
                     <div class="col-lg-3">
-                        <label for="" class=" mt-2">Supply Date</label>
+                        <label for="" class="text-danger mt-2">Transaction Type*</label>
                     </div>
                     <div class="col-lg-9">
                         
                         <div class="mb-4">
-                            <input type="date"  name=""  class="border_property form-control  rounded-0 ">
+                            
+                            <select name="" class="form-select rounded-0" id="">
+                                <option value=""></option>
+                                <option value="">Others</option>
+                                <option value="">Nominal supply</option>
+                                <option value="">Export</option>
+                                <option value="">Summary</option>
+                                
+                            </select>
                         </div>
                     </div>
                 </div>
@@ -120,46 +151,56 @@
 
     <table class="_table">
         <thead>
-          <tr>
-            <th scope="col">Item Detatils</th>
-            <th scope="col">Quantity</th>
-            <th scope="col">Rate</th>
-            <th scope="col">Discount</th>
-            <th scope="col">Tax</th>
-            <th scope="col">Amount</th>
-            <th></th>
-          </tr>
+            <tr>
+                <th scope="col">Item Detatils</th>
+                <th scope="col">Account</th>
+                <th scope="col">Quantity</th>
+                <th scope="col">Rate</th>
+                <th scope="col">Discount</th>
+                <th scope="col">Tax</th>
+                <th scope="col">Amount</th>
+                <th></th>
+            </tr>
         </thead>
         <tbody id="table_body">
-          <tr>
-            <td>
-                <textarea name="item_details" class="form-control form_control border border-0" aria-label="With textarea" ></textarea>
-            </td>
-            <td>
-                <input name="quantity" id="quantity" class="table border-0 form_control" type="number">
-            </td>
-            <td>
-                <input name="rate" id="rate" class="table border-0 form_control" type="number">
-            </td>
-            <td>
-                <input name="discount" id="discount" class="table border-0 form_control" type="number">
-            </td>
-            <td> 
-                <input name="tax" id="tax" class="table border-0 form_control" type="number">
-            </td>
-              <td>
-                <input name="amount" id="amount" class="table border-0 form_control" type="number">
-            </td>
-            <td>
-              <div class="action_container">
-                <button class="text-danger bg-white" onclick="remove_tr(this)">
-                    <i class="bi bi-x-circle text-danger"></i>
-                </button>
-              </div>
-            </td>
-          </tr>
+            <tr>
+                <td>
+                    <textarea name="item_details" class="form-control form_control border border-0"
+                        aria-label="With textarea"></textarea>
+                </td>
+                <td>
+                    <select name="" class="form-select border-0" id="">
+                        <option value="">select account</option>
+                        <option value="">account1</option>
+                        <option value="">account2</option>
+                        
+                    </select>
+                </td>
+                <td>
+                    <input name="" id="" class="table border-0 form_control" type="number">
+                </td>
+                <td>
+                    <input name="" id="" class="table border-0 form_control" type="number">
+                </td>
+                <td>
+                    <input name="" id="" class="table border-0 form_control" type="number">
+                </td>
+                <td>
+                    <input name="" id="" class="table border-0 form_control" type="number">
+                </td>
+                <td>
+                    <input name="" id="" class="table border-0 form_control" type="number">
+                </td>
+                <td>
+                    <div class="action_container">
+                        <button class="text-danger bg-white" onclick="remove_tr(this)">
+                            <i class="bi bi-x-circle text-danger"></i>
+                        </button>
+                    </div>
+                </td>
+            </tr>
         </tbody>
-      </table>
+    </table>
       <div class="action_container mt-2">
         <button class="success" onclick="create_tr('table_body',event)">
             <i class="bi bi-plus">Add New</i>

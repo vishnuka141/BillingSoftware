@@ -13,5 +13,5 @@ urlpatterns = [
   path('delivery/list/',views.delivery,name='delivery-list'),
  
   path('credit_notes/list/',views.credit_notes,name='credit_notes'),
-  
+  path('credit_notes/new/',views.create_credit_notes,name='new-credit_note')
 ]

@@ -11,5 +11,10 @@ def create_purchase(request):
     return render(request,"new_purchase.html")
 def vendor_credit(request):
     return render(request,'vendors_credit.html')
+def create_vendor_credit(request):
+    return render(request,'new_vendor_credit.html')
+
 def expenses(request):
     return render(request,'expenses.html')
+def create_expense(request):
+    return render(request,'new_expense.html')

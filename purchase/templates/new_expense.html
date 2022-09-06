@@ -1,0 +1,277 @@
+{%extends 'dashboard-home.html'%}
+{%load static%}
+{%block content%}
+
+<style>
+    table td {
+        position: relative;
+    }
+
+    table td input {
+        position: absolute;
+        display: block;
+        top: 0;
+        left: 0;
+        margin: 0;
+        height: 100%;
+        width: 100%;
+        border: none;
+        padding: 10px;
+        box-sizing: border-box;
+    }
+</style>
+<div class="">
+    <h3>Record Expense</h3>
+</div>
+<div class="card">
+    <div class="container-fluid">
+        <form action="" method="post">
+            {%csrf_token%}
+            <div class="row mt-4">
+                <div class="col-lg-8">
+                    <div class="row">
+                        <div class="col-lg-3">
+                            <label for="" class=" mt-2 text-danger">Date*</label>
+                        </div>
+                        <div class="col-lg-9">
+
+                            <div class="mb-4">
+                                <input type="date" name="" class="form-control border_property rounded-0 ">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4"></div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="row">
+                        <div class="col-lg-3">
+                            <label for="" class=" mt-2 text-danger">Expense Account*</label>
+                        </div>
+                        <div class="col-lg-9">
+
+                            <div class="mb-4">
+                                <select name="" class="form-select rounded-0" id="">
+                                    <option value=""></option>
+                                    <option value="">Cancellation of supplies either wholly or partially</option>
+                                    <option value="">Changes to VAT due</option>
+                                    <option value="">Changes to the value of supply</option>
+                                    <option value="">Goods or services refund</option>
+                                    <option value="">Others</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4"></div>
+            </div>
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="row">
+                        <div class="col-lg-3">
+                            <label for="" class="text-danger mt-2">Amount*</label>
+                        </div>
+                        <div class="col-lg-9">
+
+                            <div class="mb-4">
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text rounded-0 bg-light " id="inputGroup-sizing-default ">
+                                        <select class=" border-0 bg-light   rounded-0 " name="" id="">
+                                            <option value="1">SAR</option>
+                                            <option value="">AUD</option>
+                                            <option value="">CAD</option>
+                                            <option value="">CNY</option>
+                                            <option value="">EUR</option>
+                                            <option value="">GBP</option>
+                                            <option value="">INR</option>
+                                            <option value="">JPY</option>
+                                            <option value="">AED</option>
+                                            <option value="">USD</option>
+                                            <option value="">ZAR</option>
+                                        </select>
+                                    </span>
+                                    <input type="text" class="form-control rounded-0" aria-label="Sizing example input"
+                                        aria-describedby="inputGroup-sizing-default">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4"></div>
+            </div>
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="row">
+                        <div class="col-lg-3">
+                            <label for="" class="text-danger mt-2">Paid Through*</label>
+                        </div>
+                        <div class="col-lg-9">
+
+                            <div class="mb-4">
+                                <select class="form-select" name="" id="">
+                                    <option value="">Select Account</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4"></div>
+            </div>
+            <div class="row ">
+                <div class="col-lg-2">
+                    <label for="" class=" mt-4">Vendor</label>
+                </div>
+                <div class="col-lg-6">
+
+                    <div class="tom-select-custom form-control rounded-0 mt-3">
+                        <select id="select-beast" class="" placeholder="Select a Vendor..." autocomplete="off">
+                            <option value="">Select a Customer...</option>
+                            <option value="4">Thomas Edison</option>
+                            <option value="1">Nikola</option>
+                            <option value="3">Nikola Tesla</option>
+                            <option value="5">Arnold Schwarzenegger</option>
+                        </select>
+                    </div>
+
+                </div>
+                <div class="col-lg-4">
+                    <div class="">
+
+                        <div class="mt-3">
+                            <a class="btn btn-primary" href="{%url 'new-customer'%}">
+                                <i class="bi bi-plus-circle"></i> New Vendor</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-8">
+                    <div class="row mt-4">
+                        <div class="col-lg-3">
+                            <label for="" class="text-danger mt-2">Tax Treatment*</label>
+
+                        </div>
+                        <div class="col-lg-9">
+                            <div class="mb-4">
+                                <select class="form-select rounded-0">
+                                    <option>VAT Registered</option>
+                                    <option disabled>&nbsp;&nbsp;&nbsp;(A business that is registered for VAT and is
+                                        located in the Soudi Arabia)</option>
+                                    <option disabled></option>
+                                    <option>Non VAT Registered</option>
+                                    <option disabled>&nbsp;&nbsp;&nbsp;(A business that is not registered for VAT and is
+                                        located in the Soudi Arabia)</option>
+                                </select>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="row mt-">
+                        <div class="col-lg-3">
+                            <label for="" class="text-danger mt-2">Place Of Supply*</label>
+
+                        </div>
+                        <div class="col-lg-9">
+                            <div class="mb-4">
+                                <select class="form-select rounded-0">
+                                    <option>Select</option>
+
+                                </select>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4"></div>
+            </div>
+
+            <div class="mt-5">
+                <div class="row">
+                    <div class="col-lg-8">
+                        <div class="row">
+                            <div class="col-lg-3">
+                                <label for="" class=" mt-2">Tax</label>
+                            </div>
+                            <div class="col-lg-7">
+    
+                                <div class="mb-4">
+                                    <select name="" class="form-select rounded-0" id="">
+                                        <option value="" disabled selected>Select Tax</option>
+                                        <option value="">Exempt</option>
+                                        <option value="" disabled></option>
+                                        <option class="text-secondary" value="" disabled
+                                            style="font-size: 18px;font-weight: bold;">Taxes</option>
+                                        <option value="">Standard Rate[15%]</option>
+                                        <option value="">Zero Rate[0%]</option>
+    
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4"></div>
+                </div>
+               
+                <div class="row">
+                    <div class="col-lg-8">
+                        <div class="row">
+                            <div class="col-lg-3">
+                                <label for="" class=" mt-2">Reference#</label>
+                            </div>
+                            <div class="col-lg-7">
+    
+                                <div class="mb-4">
+                                    <input type="text" name="" class="form-control border_property rounded-0 ">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4"></div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-8">
+                        <div class="row">
+                            <div class="col-lg-3">
+                                <label for="" class=" mt-2">Notes</label>
+                            </div>
+                            <div class="col-lg-7">
+    
+                                <div class="mb-4">
+                                    <textarea name="" class="form-control form_control border_property rounded-0"
+                                aria-label="With textarea"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4"></div>
+                </div>
+    
+            </div>
+
+           
+
+            <div class="mt-4 mb-4">
+                <input type="submit" class="btn btn-primary border rounded-1" value="Save">
+                <a href="" class="btn btn-light border ms-3">Cancel</a>
+            </div>
+        </form>
+
+    </div>
+
+</div>
+
+
+<script>
+    new TomSelect("#select-beast", {
+        create: false,
+        sortField: {
+            field: "text",
+            direction: "asc"
+        }
+    });
+
+
+</script>
+
+
+{%endblock%}

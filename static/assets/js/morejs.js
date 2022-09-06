@@ -31,3 +31,6 @@ function remove_tr(This) {
         This.closest('tr').remove();
     }
 }
+
+
+

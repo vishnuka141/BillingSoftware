@@ -32,18 +32,26 @@
                 </div>
                 <div class="col-lg-6">
 
-                    <div class=" ">
-                        <select name="" id="" class="form-select rounded-0  mt-4" placeholder="Select a customer..." style="border:1px solid lightgray ;"
-                            autocomplete="off">
-
-                            <option class="form-control" name="customer_name">abcd</option>
-                            <option name="customer_name">efg</option>
-                        </select>
-
+                    <div class="tom-select-custom form-control rounded-0 mt-3">
+                      <select id="select-beast" class="" placeholder="Select a Customer..." autocomplete="off">
+                        <option  value="">Select a Customer...</option>
+                        <option value="4">Thomas Edison</option>
+                        <option value="1">Nikola</option>
+                        <option value="3">Nikola Tesla</option>
+                        <option value="5">Arnold Schwarzenegger</option>  
+                      </select>
                     </div>
-
-                    <!-- End Select -->
-                </div>
+                    
+              </div>
+              <div class="col-lg-4">
+                <div class="">
+                  
+                  <div class="mt-3">
+                      <a class="btn btn-primary" href="{%url 'new-customer'%}" >
+                          <i class="bi bi-plus-circle"></i> New Customer</a>
+                  </div>
+              </div>
+              </div>
                 <div class="col-lg-8">
                     <div class="row mt-4">
                         <div class="col-lg-3">
@@ -52,7 +60,7 @@
                         </div>
                         <div class="col-lg-9">
                             <div class="mb-4">
-                                <input type="text" name="" class="form-control rounded-0" style="border:1px solid lightgray ;">
+                                <input type="text" name="" class="form-control rounded-0" >
                             </div>
 
                         </div>
@@ -69,7 +77,7 @@
                         <div class="col-lg-9">
 
                             <div class="mb-4">
-                                <input type="text" name="" class="form-control  rounded-0" style="border:1px solid lightgray ;">
+                                <input type="text" name="" class="form-control  rounded-0" >
                             </div>
                         </div>
                     </div>
@@ -85,7 +93,7 @@
                         <div class="col-lg-9">
 
                             <div class="mb-4">
-                                <input type="date" name="" class="form-control  rounded-0" style="border:1px solid lightgray ;">
+                                <input type="date" name="" class="form-control  rounded-0" >
                             </div>
                         </div>
                     </div>
@@ -101,7 +109,7 @@
                         <div class="col-lg-9">
 
                             <div class="mb-4">
-                                <input type="text" name="" class="form-control rounded-0" style="border:1px solid lightgray ;">
+                                <input type="text" name="" class="form-control rounded-0" >
                             </div>
                         </div>
                     </div>
@@ -162,12 +170,12 @@
                 <div class="col-6">
                     <div class="mt-4">
                         <label for="">Customer Notes</label>
-                        <textarea name="" class="form-control form_control  rounded-0" style="border:1px solid lightgray ;"
+                        <textarea name="" class="form-control form_control  rounded-0" 
                             aria-label="With textarea"></textarea>
                     </div>
                     <div class="mt-4">
                         <label for="">Terms & Conditions </label>
-                        <textarea name="" class="form-control form_control  rounded-0" style="border:1px solid lightgray ;"
+                        <textarea name="" class="form-control form_control  rounded-0" 
                             aria-label="With textarea"></textarea>
                     </div>
                 </div>
@@ -185,6 +193,16 @@
 
 </div>
 
+<script>
+    new TomSelect("#select-beast",{
+	create: false,
+	sortField: {
+		field: "text",
+		direction: "asc"
+	}
+});
+
+</script>
 
 
 
